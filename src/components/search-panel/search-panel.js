@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 
 import './search-panel.css';
+import SearchPanelStore from '../../store/SearchPanelStore';
 
-
-export default class SearchPanel extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            term: ''
-        };
-        this.onSearch = this.onSearch.bind(this);
-    }
-    onSearch(event) {
-        const term = event.target.value;
-        this.setState({term})
-        this.props.onSearch(term);
-    }
+export default observer(
+  class SearchPanel extends Component {
     render() {
-        return(
-            <input
-                className = "form-control search-input"
-                type = "text"
-                placeholder = "Поиск по записям"
-                onChange={this.onSearch}
-            />
-        )
+      return (
+        <input
+          className="form-control search-input"
+          type="text"
+          placeholder="Поиск по записям"
+          onChange={SearchPanelStore.onSearch}
+        />
+      );
     }
-}
+  },
+);
