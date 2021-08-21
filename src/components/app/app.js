@@ -46,7 +46,7 @@ export default observer(
         <AppBlock>
           <AppHeader liked={liked} allPosts={allPosts} />
           <div className="search-panel d-flex">
-            <SearchPanel onSearch={AppStore.onSearch} />
+            <SearchPanel />
             <PostStatusFilter filter={AppStore.filter} onFilterSelect={AppStore.onFilterSelect} />
           </div>
           <PostList
@@ -55,7 +55,7 @@ export default observer(
             onToggleImportant={AppStore.onToggleImportant}
             onToggleLiked={AppStore.onToggleLiked}
           />
-          <PostAddForm onAdd={AppStore.addItem} />
+          <PostAddForm />
         </AppBlock>
       );
     }
