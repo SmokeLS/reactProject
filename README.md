@@ -1,1 +1,1 @@
-That project was made when i was watching the course.
+This project has 2 branches, one uses setState, another uses MobX.
